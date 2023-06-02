@@ -3,7 +3,7 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="HelloWorldAction" class="com.itclinical.simple_struts_exercise.HelloWorldAction">
+    <bean id="RegisterAction" class="com.itclinical.Struts2.Actions.RegisterAction">
         <!-- Configure properties and dependencies for the bean -->
     </bean>
 </beans>

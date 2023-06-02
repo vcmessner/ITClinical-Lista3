@@ -16,7 +16,7 @@ pageEncoding="ISO-8859-1"%>
             <s:actionerror />
         </div>
         </s:if>
-        <s:form action="helloWorldAction" name="nameForm">
+        <s:form action="RegisterAction" name="nameForm">
             <s:textfield name="name" size="40" maxlength="40" key="please.enter.name.message" />
             <s:textfield name="date" size="40" maxlength="40" key="please.enter.age.message" />
             <s:submit value="submit" />

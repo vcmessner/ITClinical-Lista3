@@ -7,12 +7,12 @@
 <struts>
     <constant name="struts.devMode" value="true" />
 
-    <bean name="HelloWorldAction" 
-        class="com.itclinical.simple_struts_exercise.HelloWorldAction"/>
+    <bean name="RegisterAction" 
+        class="com.itclinical.Struts2.Actions.RegisterAction"/>
 
     <package name="basic-struts2" extends="struts-default">
-        <action name="helloWorldAction"
-            class="com.itclinical.simple_struts_exercise.HelloWorldAction">
+        <action name="RegisterAction"
+            class="com.itclinical.Struts2.Actions.RegisterAction">
             <result name="input">/index.jsp</result>
             <result name="success">/success.jsp</result>
         </action>
