@@ -23,26 +23,7 @@ public class RegisterActionStepDefs {
     private Map<String, String> inputParameterMap = new HashMap<>();
     private Map<String, String> assertParameterMap = new HashMap<>();
     private Period dateDiff;
-
-
-    private String mapActionStatus(String code){
-        switch(code){
-            case("input"):
-                return "Denied";
-            case("success"):
-                return "Approved";
-            default:
-                return"";
-        }
-    }
-
-    private void executeAndSaveOutputs(RegisterAction myAction) throws Exception{
-        assertParameterMap.put("allowed",mapActionStatus(helper.executeProxy()));
-        assertParameterMap.put("age",(myAction).getAgeMessage());
-        assertParameterMap.put("name",(myAction).getName());
-        assertParameterMap.put("error",(myAction).getErrorCode()+"");
-    }
-    
+  
 
     @Given("i want to acess the success page")
     public void i_want_to_acess_the_success_page() {
@@ -84,7 +65,7 @@ public class RegisterActionStepDefs {
     @When("i click the submit button")
     public void i_click_the_submit_button() throws Exception {
         helper.getRequest().addParameters(inputParameterMap);
-        // factory pattern pras actions para poder ter multiplas versões diferentes do executeandsaveoutputs? 
+        // factory pattern para ter multiplas versões diferentes do executeandsaveoutputs? 
         ActionSupport myAction = helper.createAction(Constants.REGISTER_ACTION_URI, true);
         executeAndSaveOutputs((RegisterAction)myAction);
     }
@@ -105,6 +86,24 @@ public void i_must_be_see_a_page_containing_my_name_and_age(String name, String 
     assertEquals(age, assertParameterMap.get("age"));
     assertEquals(age, assertParameterMap.get("age"));
     assertEquals(assertParameterMap.get("error"), "0");
+}
+
+private String mapActionStatus(String code){
+    switch(code){
+        case("input"):
+            return "Denied";
+        case("success"):
+            return "Approved";
+        default:
+            return"";
+    }
+}
+
+private void executeAndSaveOutputs(RegisterAction myAction) throws Exception{
+    assertParameterMap.put("allowed",mapActionStatus(helper.executeProxy()));
+    assertParameterMap.put("age",(myAction).getAgeMessage());
+    assertParameterMap.put("name",(myAction).getName());
+    assertParameterMap.put("error",(myAction).getErrorCode()+"");
 }
 
 }

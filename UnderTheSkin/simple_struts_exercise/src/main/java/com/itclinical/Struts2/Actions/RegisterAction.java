@@ -44,10 +44,6 @@ public class RegisterAction extends ActionSupport {
         return errorCode;
     }
 
-    public void setErrorCode(int errorCode) {
-        this.errorCode = errorCode;
-    }
-
     protected boolean checkDate() throws Exception {
         if(user.getDate()==null) {
             addActionError(getText("INVALID_DATE_MESSAGE_STRING"));

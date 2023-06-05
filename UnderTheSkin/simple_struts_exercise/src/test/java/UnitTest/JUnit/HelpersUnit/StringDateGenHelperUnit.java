@@ -15,15 +15,6 @@ import com.itclinical.Struts2.Helpers.StringDateGenHelper;
 public class StringDateGenHelperUnit {
 
 
-    public LocalDate returnNonSideMatch(LocalDate begin, LocalDate end){
-        LocalDate inputDate = LocalDate.parse(StringDateGenHelper.createRandomDateFromRange(begin, end),Constants.DEFAULT_FORMATTER);
-        while(inputDate.equals(begin)|| inputDate.equals(end)){
-            inputDate = LocalDate.parse(StringDateGenHelper.createRandomDateFromRange(begin, end),Constants.DEFAULT_FORMATTER);
-        }
-        return inputDate;
-    }
-
-
     @RepeatedTest(Constants.DEFAULT_NUMBER_JUNIT_REPEAT)
     public void createRandomDateFromRangeTest(){
         LocalDate presentDate = LocalDate.now(Constants.DEFAULT_ZONE_OFFSET);
@@ -114,9 +105,16 @@ public class StringDateGenHelperUnit {
             case 3:
                 myDate = LocalDate.parse(StringDateGenHelper.createDateFromNow(0),Constants.DEFAULT_FORMATTER);
                 assertTrue(myDate.equals(currentDate)); 
-            default:
-                       
+            default:            
         }
+    }
+
+    private LocalDate returnNonSideMatch(LocalDate begin, LocalDate end){
+        LocalDate inputDate = LocalDate.parse(StringDateGenHelper.createRandomDateFromRange(begin, end),Constants.DEFAULT_FORMATTER);
+        while(inputDate.equals(begin)|| inputDate.equals(end)){
+            inputDate = LocalDate.parse(StringDateGenHelper.createRandomDateFromRange(begin, end),Constants.DEFAULT_FORMATTER);
+        }
+        return inputDate;
     }
     
 }

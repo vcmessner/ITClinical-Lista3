@@ -1,7 +1,7 @@
 package com.itclinical.Struts2.User;
 
 public class Name {
-    String name;
+    private String name;
 
     public String getName() {
         return name;

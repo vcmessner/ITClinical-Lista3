@@ -16,7 +16,16 @@ import freemarker.core.ParseException;
 public class AgeUnit {
 
     
-    public void calculateAgeTestEdgeCases(LocalDate today){
+    @RepeatedTest(Constants.DEFAULT_NUMBER_JUNIT_REPEAT)
+    public void calculateAgeTest() throws ParseException{       
+        String todayString =  StringDateGenHelper.createDateFromNow(Constants.RANDOM_AGE_LOWERBOUND);
+        Date todayDate = new Date(todayString);
+        LocalDate today = todayDate.GetLocalDate();
+        calculateAgeTestEdgeCases(today);
+        calculateAgeTestYearDiff(today);     
+    }
+
+    private void calculateAgeTestEdgeCases(LocalDate today){
         Random random = new Random();
         int difference = random.nextInt(Constants.RANDOM_AGE_LOWERBOUND);
         LocalDate tomorrow = today.plusDays(1);   
@@ -40,21 +49,12 @@ public class AgeUnit {
         }
     }
 
-      public void calculateAgeTestYearDiff(LocalDate today){
+      private void calculateAgeTestYearDiff(LocalDate today){
         Random random = new Random();
         int difference = random.nextInt(Constants.RANDOM_AGE_LOWERBOUND);
         LocalDate birthDate = today.plusYears(-difference);
         Period myAgeToday = Period.between(birthDate, today);
         assertTrue(myAgeToday.getYears()==difference);
       }
-
-    @RepeatedTest(Constants.DEFAULT_NUMBER_JUNIT_REPEAT)
-    public void calculateAgeTest() throws ParseException{       
-        String todayString =  StringDateGenHelper.createDateFromNow(Constants.RANDOM_AGE_LOWERBOUND);
-        Date todayDate = new Date(todayString);
-        LocalDate today = todayDate.GetLocalDate();
-        calculateAgeTestEdgeCases(today);
-        calculateAgeTestYearDiff(today);     
-    }
     
 }

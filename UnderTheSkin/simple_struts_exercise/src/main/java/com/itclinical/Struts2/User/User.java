@@ -4,8 +4,8 @@ import java.time.LocalDate;
 import com.itclinical.Struts2.Helpers.Constants;
 public class User {
 
-    public Date birthDate;
-    public Age age;
+    private Date birthDate;
+    public  Age age;
     private Name name;
     //private boolean isValid;
 
