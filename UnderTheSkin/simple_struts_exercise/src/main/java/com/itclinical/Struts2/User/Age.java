@@ -2,7 +2,6 @@ package com.itclinical.Struts2.User;
 
 import java.time.LocalDate;
 import java.time.Period;
-
 import com.itclinical.Struts2.Helpers.Constants;
 
 import freemarker.core.ParseException;
@@ -22,7 +21,11 @@ public class Age {
         this.age = age;
     }
 
-    public int calculateAge(String date){
+    public boolean isLegal(int legalAge){
+        return !(age<legalAge);
+    }
+
+    protected int calculateAge(String date){
         LocalDate currentDate = LocalDate.now(Constants.DEFAULT_ZONE_OFFSET);
         Date myBirthDate = new Date(date);
         if(myBirthDate.getDate()!=null) {
@@ -37,13 +40,7 @@ public class Age {
                 return 0;
             }            
         }
-        return 0;
-    }
-
-    public boolean isLegal(int legalAge){
-        return !(age<legalAge);
-    }
-
-    
+        return -1;
+    }    
     
 }

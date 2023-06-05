@@ -3,7 +3,7 @@ import java.util.Random;
 
 public class StringGenHelper {   
 
-    public String createRandomAlphaNumString(int probability, int len){
+    public static String createRandomAlphaNumString(int probability, int len){
         String output ="";
         Random random = new Random();		
         for(int i=0;i<len;++i){

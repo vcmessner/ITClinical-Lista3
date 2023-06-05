@@ -2,7 +2,6 @@ package BDD.Cucumber.StepDefs;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
 
 import java.time.LocalDate;
 import java.time.Period;
@@ -20,7 +19,6 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
 public class RegisterActionStepDefs {
-    private String userIsAllowed;
     private UnderTheSkinHelpers helper = new UnderTheSkinHelpers();
     private Map<String, String> inputParameterMap = new HashMap<>();
     private Map<String, String> assertParameterMap = new HashMap<>();

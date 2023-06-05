@@ -14,13 +14,12 @@ import com.itclinical.Struts2.User.User;
 
 public class RegisterActionUnit {
 
-    @RepeatedTest(1000)
+    @RepeatedTest(Constants.DEFAULT_NUMBER_JUNIT_REPEAT)
     public void checkDateTest() throws Exception {
         String userName = "algo";
-        StringDateGenHelper dateGen = new StringDateGenHelper();
-        String legalAge = dateGen.createValidDateFromNow(Constants.LEGAL_AGE,Constants.RANDOM_AGE_LOWERBOUND);
-        String minorAge = dateGen.createMinorDateFromNow(Constants.LEGAL_AGE);
-        String invalidDate =dateGen.createInvalidDate();
+        String legalAge = StringDateGenHelper.createValidDateFromNow(Constants.LEGAL_AGE,Constants.RANDOM_AGE_LOWERBOUND);
+        String minorAge = StringDateGenHelper.createMinorDateFromNow(Constants.LEGAL_AGE);
+        String invalidDate =StringDateGenHelper.createInvalidDate();
         User legalAgeUser = new User(userName,legalAge); 
         User minorAgeUser = new User(userName,minorAge); 
         User invalidDateUser = new User(userName,invalidDate);  
@@ -40,8 +39,7 @@ public class RegisterActionUnit {
 
     @Test
     public void checkUsernameTest() throws Exception {
-        StringGenHelper GenStr = new StringGenHelper();
-        String userName = GenStr.createRandomAlphaNumString(Constants.DEFAULT_UPPERCASE_PROBABILITY, Constants.DEFAULT_RANDOM_STR_LEN);
+        String userName = StringGenHelper.createRandomAlphaNumString(Constants.DEFAULT_UPPERCASE_PROBABILITY, Constants.DEFAULT_RANDOM_STR_LEN);
         String BirthDate = "01/01/1992";
         User validUsernameUser = new User(userName,BirthDate);
         User nullUsernameUser = new User(null,BirthDate);

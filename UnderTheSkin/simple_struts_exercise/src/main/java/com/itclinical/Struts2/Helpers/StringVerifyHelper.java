@@ -19,20 +19,15 @@ public class StringVerifyHelper {
         }
     }
 
-    public Boolean isUpperCaseAlNum(String text){
+    public static Boolean isUpperCaseAlNum(String text){
        return text.matches("[A-Z0-9]+");
     }
 
-    public Boolean isLowerCaseAlNum(String text){
+    public static Boolean isLowerCaseAlNum(String text){
         return text.matches("[a-z0-9]+");
     }
 
-    public Boolean isAlNum(String text){
-        if(text.matches("[A-Za-z0-9]+")){
-            return true;
-        }
-        else{
-            return false;
-        }    
-    }
+    public static Boolean isAlNum(String text){
+        return text.matches("[A-Za-z0-9]+");
+}
 }

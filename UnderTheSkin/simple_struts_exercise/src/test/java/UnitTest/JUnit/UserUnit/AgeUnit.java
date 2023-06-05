@@ -49,9 +49,8 @@ public class AgeUnit {
       }
 
     @RepeatedTest(Constants.DEFAULT_NUMBER_JUNIT_REPEAT)
-    public void calculateAgeTest() throws ParseException{
-        StringDateGenHelper dateGen = new StringDateGenHelper();        
-        String todayString =  dateGen.createDateFromNow(Constants.RANDOM_AGE_LOWERBOUND);
+    public void calculateAgeTest() throws ParseException{       
+        String todayString =  StringDateGenHelper.createDateFromNow(Constants.RANDOM_AGE_LOWERBOUND);
         Date todayDate = new Date(todayString);
         LocalDate today = todayDate.GetLocalDate();
         calculateAgeTestEdgeCases(today);

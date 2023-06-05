@@ -2,10 +2,8 @@ package com.itclinical.Struts2.User;
 
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
-
 import freemarker.core.ParseException;
 import java.util.Calendar;
-
 import com.itclinical.Struts2.Helpers.Constants;
 
 public class Date {

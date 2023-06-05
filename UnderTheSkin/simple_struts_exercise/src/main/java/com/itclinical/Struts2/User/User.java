@@ -1,13 +1,13 @@
 package com.itclinical.Struts2.User;
 import java.text.ParseException;
 import java.time.LocalDate;
-
 import com.itclinical.Struts2.Helpers.Constants;
 public class User {
 
     public Date birthDate;
     public Age age;
     private Name name;
+    //private boolean isValid;
 
     //@Autowired
     public User(String myName, String birthDate) throws ParseException {
@@ -45,6 +45,14 @@ public class User {
 
     public void setDate(Date date) {
         this.birthDate = date;
+    }
+
+    public boolean isValid(){
+        if(this.getDate()==null || this.getName() ==null || this.getAge()==-1 || this.getAge()<Constants.LEGAL_AGE){
+            return false;
+        }
+        return true;
+
     }
 
 

@@ -9,23 +9,20 @@ import com.itclinical.Struts2.Helpers.StringVerifyHelper;
 
 
 public class StringGenHelperUnit {
-    
-    StringGenHelper genStr = new StringGenHelper();
-    StringVerifyHelper verificator = new StringVerifyHelper();
 
     void Assert_LowerCaseAlphaNum(){
-        String output = genStr.createRandomAlphaNumString(0,10);
-		assertTrue(verificator.isLowerCaseAlNum(output));
+        String output = StringGenHelper.createRandomAlphaNumString(0,10);
+		assertTrue(StringVerifyHelper.isLowerCaseAlNum(output));
 	}
 
     void Assert_UpperCaseAlphaNum(){
-        String output = genStr.createRandomAlphaNumString(100,10);
-		assertTrue(verificator.isUpperCaseAlNum(output));
+        String output = StringGenHelper.createRandomAlphaNumString(100,10);
+		assertTrue(StringVerifyHelper.isUpperCaseAlNum(output));
 	}
 
     void Assert_AlphaNum(){
-        String output = genStr.createRandomAlphaNumString(100,10);
-		assertTrue(verificator.isAlNum(output));
+        String output = StringGenHelper.createRandomAlphaNumString(100,10);
+		assertTrue(StringVerifyHelper.isAlNum(output));
 	}
 
     @RepeatedTest(Constants.DEFAULT_NUMBER_JUNIT_REPEAT)

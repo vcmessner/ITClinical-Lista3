@@ -6,12 +6,12 @@ import com.opensymphony.xwork2.ActionSupport;
 @SuppressWarnings("serial")
 public class RegisterAction extends ActionSupport {    
     
-    String name;
-    String date;
+    private String name;
+    private String date;
     private User user;
-    int errorCode=-1;
+    private int errorCode=-1;
 
-    public String execute() throws Exception{
+    public String validateUser() throws Exception{
         this.user = new User(name, date);
         if(checkUsername() && checkDate()){
             errorCode=0;
@@ -19,31 +19,6 @@ public class RegisterAction extends ActionSupport {
         }
         return ActionSupport.INPUT;        
     }
-
-    public boolean checkDate() throws Exception {
-        if(user.getDate()==null) {
-            addActionError(getText("INVALID_DATE_MESSAGE_STRING"));
-            errorCode=2;
-            return false;
-        }
-        if(user.age.isLegal(Constants.LEGAL_AGE)){
-            return true;
-        }
-        else{
-            addActionError(getText("AGE_RESTICTION_MESSAGE_STRING"));
-            errorCode = 3;
-            return false;
-        }
-    }
-
-    public boolean checkUsername() throws Exception {
-        if(user.getName()==null) {
-            addActionError(getText("INVALID_NAME_MESSAGE_STRING"));
-            errorCode=1;
-            return false;        
-        }
-        return true;        
-        }
 
     public String getName() {
         return name;
@@ -72,4 +47,29 @@ public class RegisterAction extends ActionSupport {
     public void setErrorCode(int errorCode) {
         this.errorCode = errorCode;
     }
+
+    protected boolean checkDate() throws Exception {
+        if(user.getDate()==null) {
+            addActionError(getText("INVALID_DATE_MESSAGE_STRING"));
+            errorCode=2;
+            return false;
+        }
+        if(user.age.isLegal(Constants.LEGAL_AGE)){
+            return true;
+        }
+        else{
+            addActionError(getText("AGE_RESTICTION_MESSAGE_STRING"));
+            errorCode = 3;
+            return false;
+        }
+    }
+
+    protected boolean checkUsername() throws Exception {
+        if(user.getName()==null) {
+            addActionError(getText("INVALID_NAME_MESSAGE_STRING"));
+            errorCode=1;
+            return false;        
+        }
+        return true;        
+        }
 }

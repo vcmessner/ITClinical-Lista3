@@ -12,7 +12,7 @@
 
     <package name="basic-struts2" extends="struts-default">
         <action name="RegisterAction"
-            class="com.itclinical.Struts2.Actions.RegisterAction">
+            class="com.itclinical.Struts2.Actions.RegisterAction" method="validateUser">
             <result name="input">/index.jsp</result>
             <result name="success">/success.jsp</result>
         </action>

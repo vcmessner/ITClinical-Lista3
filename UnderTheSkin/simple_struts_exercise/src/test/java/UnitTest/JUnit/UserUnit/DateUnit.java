@@ -13,12 +13,11 @@ public class DateUnit {
 
     @RepeatedTest(Constants.DEFAULT_NUMBER_JUNIT_REPEAT)
     public void dateContructorTest(){
-        StringDateGenHelper dateGen = new StringDateGenHelper();
         Date nullDate =  new Date(null);
         Date emptyDate = new Date("");
-        Date invalidDate = new Date(dateGen.createInvalidDate());
-        Date validMinorDate =  new Date(dateGen.createMinorDateFromNow(Constants.LEGAL_AGE));
-        Date validLegalDate =  new Date(dateGen.createValidDateFromNow(Constants.LEGAL_AGE, Constants.LEGAL_AGE));
+        Date invalidDate = new Date(StringDateGenHelper.createInvalidDate());
+        Date validMinorDate =  new Date(StringDateGenHelper.createMinorDateFromNow(Constants.LEGAL_AGE));
+        Date validLegalDate =  new Date(StringDateGenHelper.createValidDateFromNow(Constants.LEGAL_AGE, Constants.LEGAL_AGE));
         assertTrue(nullDate.getDate()==null);
         assertTrue(emptyDate.getDate()==null);
         assertTrue(invalidDate.getDate()==null);
