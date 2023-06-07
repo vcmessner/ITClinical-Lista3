@@ -1,0 +1,9 @@
+com\itclinical\struts2\helpers\StringDateGenHelperUnit.class
+com\itclinical\struts2\user\DateUnit.class
+com\itclinical\struts2\user\NameUnit.class
+com\itclinical\struts2\actions\RegisterActionUnit.class
+com\itclinical\struts2\helpers\StringGenHelperUnit.class
+helpers\UnderTheSkinHelpers.class
+com\itclinical\struts2\user\AgeUnit.class
+helpers\MockMultipartRequest.class
+com\itclinical\struts2\user\UserUnit.class

@@ -1,7 +1,6 @@
-package bdd.cucumber.stepdefs;
+package cucumber;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
 
 import java.time.LocalDate;
 import java.time.Period;
@@ -20,6 +19,8 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
+
+
 public class RegisterActionStepDefs {
     private UnderTheSkinHelpers helper = new UnderTheSkinHelpers();
     private Map<String, String> inputParameterMap = new HashMap<>();
@@ -27,7 +28,7 @@ public class RegisterActionStepDefs {
     private Period dateDiff;
   
 
-    @Given("i want to acess the success page")
+    @Given("i want to access the success page")
     public void i_want_to_acess_the_success_page() {
         helper.initServletRequestMockObject();
         try{
@@ -67,19 +68,18 @@ public class RegisterActionStepDefs {
     @When("i click the submit button")
     public void i_click_the_submit_button() throws Exception {
         helper.getRequest().addParameters(inputParameterMap);
-        // factory pattern para ter multiplas versões diferentes do executeandsaveoutputs? 
         ActionSupport myAction = helper.createAction(Constants.REGISTER_ACTION_URI, true);
         executeAndSaveOutputs((RegisterAction)myAction);
     }
 
-    @Then("my acess request will be {string}")
+    @Then("my access request will be {string}")
     public void my_acess_request_will_be(String answer) {
         assertEquals(answer, assertParameterMap.get("allowed"));      
 }
 
-@Then("i must be greeted with an error message")
-public void i_must_be_greeted_with_an_error_message() {
-    assertFalse(assertParameterMap.get("error").equals("0"));
+@Then("I will be shown the error message: {string}")
+public void i_must_be_greeted_with_an_error_message(String error) {
+    assertEquals(assertParameterMap.get("error"), error);
 }
 
 @Then("i must be see a page containing my {string} and {string}")
@@ -87,7 +87,7 @@ public void i_must_be_see_a_page_containing_my_name_and_age(String name, String 
     assertEquals(name, assertParameterMap.get("name"));
     assertEquals(age, assertParameterMap.get("age"));
     assertEquals(age, assertParameterMap.get("age"));
-    assertEquals(assertParameterMap.get("error"), "0");
+    assertEquals(assertParameterMap.get("error"), null);
 }
 
 private String mapActionStatus(String code){
@@ -102,11 +102,13 @@ private String mapActionStatus(String code){
 }
 
 private void executeAndSaveOutputs(RegisterAction myAction) throws Exception{
-    assertParameterMap.put("allowed",mapActionStatus(helper.executeProxy()));
-    assertParameterMap.put("age",(myAction).getAgeMessage());
+    String status = mapActionStatus(helper.executeProxy());
+    assertParameterMap.put("allowed",status);
+    assertParameterMap.put("error",(myAction).getError());
     assertParameterMap.put("name",(myAction).getName());
-    assertParameterMap.put("error",(myAction).getErrorCode()+"");
+    if(status.equals("Approved")){
+        assertParameterMap.put("age",(myAction).getAgeMessage());
+    }
 }
 
 }
-    

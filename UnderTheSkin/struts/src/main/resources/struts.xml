@@ -8,11 +8,11 @@
     <constant name="struts.devMode" value="true" />
 
     <bean name="RegisterAction" 
-        class="com.itclinical.Struts2.Actions.RegisterAction"/>
+        class="com.itclinical.struts2.actions.RegisterAction"/>
 
     <package name="basic-struts2" extends="struts-default">
         <action name="RegisterAction"
-            class="com.itclinical.Struts2.Actions.RegisterAction" method="validateUser">
+            class="com.itclinical.struts2.actions.RegisterAction" method="validateUser">
             <result name="input">/index.jsp</result>
             <result name="success">/success.jsp</result>
         </action>

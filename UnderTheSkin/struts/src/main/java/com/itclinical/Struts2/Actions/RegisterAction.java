@@ -9,12 +9,20 @@ public class RegisterAction extends ActionSupport {
     private String name;
     private String date;
     private User user;
-    private int errorCode=-1;
+    private String error=null;
+
+    public String getError() {
+        return error;
+    }
+
+    public void setError(String error) {
+        this.error = error;
+    }
 
     public String validateUser() throws Exception{
         this.user = new User(name, date);
         if(checkUsername() && checkDate()){
-            errorCode=0;
+            error=null;
             return ActionSupport.SUCCESS;
         }
         return ActionSupport.INPUT;        
@@ -38,32 +46,31 @@ public class RegisterAction extends ActionSupport {
 
     public String getAgeMessage() {
         return user.getAge() + " Years";
-    }  
+    } 
 
-    public int getErrorCode() {
-        return errorCode;
-    }
+    
 
     protected boolean checkDate() throws Exception {
         if(user.getDate()==null) {
-            addActionError(getText("INVALID_DATE_MESSAGE_STRING"));
-            errorCode=2;
+            error=getText("INVALID_DATE_MESSAGE_STRING");
+            addActionError(error);            
             return false;
         }
         if(user.isLegal(Constants.LEGAL_AGE)){
             return true;
         }
         else{
-            addActionError(getText("AGE_RESTRICTION_MESSAGE_STRING"));
-            errorCode = 3;
+            error = getText("AGE_RESTRICTION_MESSAGE_STRING");
+            addActionError(error);
+            
             return false;
         }
     }
 
     protected boolean checkUsername() throws Exception {
         if(user.getName()==null) {
-            addActionError(getText("INVALID_NAME_MESSAGE_STRING"));
-            errorCode=1;
+            error=getText("INVALID_NAME_MESSAGE_STRING");
+            addActionError(error);            
             return false;        
         }
         return true;        
