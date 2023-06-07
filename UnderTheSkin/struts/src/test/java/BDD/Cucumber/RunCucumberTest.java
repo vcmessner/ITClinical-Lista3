@@ -1,4 +1,4 @@
-package BDD.Cucumber;
+package bdd.cucumber;
 
 import org.junit.platform.suite.api.ConfigurationParameter;
 import org.junit.platform.suite.api.IncludeEngines;

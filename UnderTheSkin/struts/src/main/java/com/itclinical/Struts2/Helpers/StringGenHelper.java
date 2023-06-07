@@ -1,9 +1,9 @@
-package com.itclinical.Struts2.Helpers;
+package com.itclinical.struts2.helpers;
 import java.util.Random;
 
 public class StringGenHelper {   
 
-    public static String createRandomAlphaNumString(int probability, int len){
+    public static String createRandomAlphanumericString(int probability, int len){
         String output ="";
         Random random = new Random();		
         for(int i=0;i<len;++i){

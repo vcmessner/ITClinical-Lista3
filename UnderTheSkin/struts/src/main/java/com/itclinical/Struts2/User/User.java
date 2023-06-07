@@ -1,11 +1,14 @@
-package com.itclinical.Struts2.User;
+package com.itclinical.struts2.user;
 import java.text.ParseException;
 import java.time.LocalDate;
-import com.itclinical.Struts2.Helpers.Constants;
+import java.time.Period;
+
+import com.itclinical.struts2.helpers.Constants;
+import com.itclinical.struts2.helpers.DateConstants;
 public class User {
 
     private Date birthDate;
-    public  Age age;
+    private Integer age=null;
     private Name name;
     //private boolean isValid;
 
@@ -14,12 +17,7 @@ public class User {
         this.name = new Name(myName);
         this.birthDate = new Date(birthDate);
         if(this.birthDate.getDate()!=null){
-            this.age = new Age(birthDate);
-        }
-        else{
-            LocalDate currentDate = LocalDate.now(Constants.DEFAULT_ZONE_OFFSET);
-            String dateString = currentDate.format(Constants.DEFAULT_FORMATTER);
-            this.age=new Age(dateString);
+            this.age = calculateAge(birthDate);
         }
     }
 
@@ -28,7 +26,7 @@ public class User {
     }
 
     public int getAge() {
-        return age.getAge();
+        return age;
     }
 
     public String getDate() {
@@ -39,7 +37,7 @@ public class User {
         this.name = name;
     }
 
-    public void setAge(Age age) {
+    public void setAge(Integer age) {
         this.age = age;
     }
 
@@ -53,6 +51,29 @@ public class User {
         }
         return true;
 
+    }
+
+    public boolean isLegal(int legalAge){
+        return !(age<legalAge);
+    }
+
+    protected int calculateAge(String date){
+        LocalDate currentDate = LocalDate.now(DateConstants.DEFAULT_ZONE_OFFSET);
+        Date myBirthDate = new Date(date);
+        if(myBirthDate.getDate()!=null) {
+            LocalDate birthDate;
+            try {
+                birthDate =myBirthDate.GetLocalDate();
+                Period myAge = Period.between(birthDate, currentDate);
+                return (myAge.getYears());
+            }
+            catch (freemarker.core.ParseException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+                return 0;
+            }
+        }            
+        return -1;
     }
 
 

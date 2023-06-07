@@ -1,13 +1,13 @@
-package com.itclinical.Struts2.Helpers;
+package com.itclinical.struts2.helpers;
 
 public class StringVerifyHelper {
     
     public static boolean isNameValid(String name) {
-        return name.matches(Constants.REGEX_ALPHA);
+        return name.matches(RegexConstants.REGEX_ALPHA);
     }
 
     public static boolean isAgeValid(String age) {
-        return age.matches(Constants.REGEX_NUM);
+        return age.matches(RegexConstants.REGEX_NUM);
     } 
     
     public static String trucateName(String name){
@@ -19,15 +19,15 @@ public class StringVerifyHelper {
         }
     }
 
-    public static Boolean isUpperCaseAlNum(String text){
+    public static Boolean isUpperCaseAlphanumeric(String text){
        return text.matches("[A-Z0-9]+");
     }
 
-    public static Boolean isLowerCaseAlNum(String text){
+    public static Boolean isLowerCaseAlphanumeric(String text){
         return text.matches("[a-z0-9]+");
     }
 
-    public static Boolean isAlNum(String text){
+    public static Boolean isAlphanumeric(String text){
         return text.matches("[A-Za-z0-9]+");
 }
 }

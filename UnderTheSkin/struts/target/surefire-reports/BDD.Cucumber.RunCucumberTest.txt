@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: BDD.Cucumber.RunCucumberTest
 -------------------------------------------------------------------------------
-Tests run: 11, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.283 s - in BDD.Cucumber.RunCucumberTest
+Tests run: 11, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.148 s - in BDD.Cucumber.RunCucumberTest

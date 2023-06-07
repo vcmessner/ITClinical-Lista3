@@ -1,4 +1,4 @@
-package com.itclinical.Struts2.User;
+package com.itclinical.struts2.user;
 
 public class Name {
     private String name;

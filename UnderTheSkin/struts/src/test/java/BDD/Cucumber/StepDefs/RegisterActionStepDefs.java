@@ -1,4 +1,4 @@
-package BDD.Cucumber.StepDefs;
+package bdd.cucumber.stepdefs;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
@@ -8,12 +8,14 @@ import java.time.Period;
 import java.util.HashMap;
 import java.util.Map;
 
-import com.itclinical.Struts2.Actions.RegisterAction;
-import com.itclinical.Struts2.Helpers.Constants;
-import com.itclinical.Struts2.User.Date;
+import com.itclinical.struts2.actions.RegisterAction;
+import com.itclinical.struts2.helpers.Constants;
+import com.itclinical.struts2.helpers.DateConstants;
+import com.itclinical.struts2.user.Date;
 import com.opensymphony.xwork2.ActionSupport;
-import Helpers.UnderTheSkinHelpers;
+
 import freemarker.core.ParseException;
+import helpers.UnderTheSkinHelpers;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -40,7 +42,7 @@ public class RegisterActionStepDefs {
     public void today_is(String today) throws ParseException {
         Date myDate = new Date(today);
         LocalDate todayLocalDate = myDate.GetLocalDate();
-        LocalDate currentDate = LocalDate.now(Constants.DEFAULT_ZONE_OFFSET);
+        LocalDate currentDate = LocalDate.now(DateConstants.DEFAULT_ZONE_OFFSET);
         dateDiff = Period.between(todayLocalDate,currentDate);
     }
 
@@ -57,7 +59,7 @@ public class RegisterActionStepDefs {
         if(myDate.getDate()!=null){
             LocalDate todayLocalDate = myDate.GetLocalDate();
             todayLocalDate =todayLocalDate.plus(dateDiff);
-            formattedDate = todayLocalDate.format(Constants.DEFAULT_FORMATTER);
+            formattedDate = todayLocalDate.format(DateConstants.DEFAULT_FORMATTER);
         }
         inputParameterMap.put("date", formattedDate);
     }

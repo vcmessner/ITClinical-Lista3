@@ -1,10 +1,11 @@
-package com.itclinical.Struts2.User;
+package com.itclinical.struts2.user;
 
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import freemarker.core.ParseException;
 import java.util.Calendar;
-import com.itclinical.Struts2.Helpers.Constants;
+
+import com.itclinical.struts2.helpers.DateConstants;
 
 public class Date {
 
@@ -20,7 +21,7 @@ public class Date {
 
     public Date(String myDate) {
         if(!isDatePropertyInvalid(myDate)){ 
-            SimpleDateFormat myDateFormat = new SimpleDateFormat(Constants.DATE_FORMAT);
+            SimpleDateFormat myDateFormat = new SimpleDateFormat(DateConstants.DATE_FORMAT);
             myDateFormat.setLenient(false);
             Calendar cal = Calendar.getInstance();
             try {
@@ -37,7 +38,7 @@ public class Date {
 
 
     public LocalDate GetLocalDate() throws ParseException {
-        LocalDate userDate = LocalDate.parse(date, Constants.DEFAULT_FORMATTER);
+        LocalDate userDate = LocalDate.parse(date, DateConstants.DEFAULT_FORMATTER);
         return userDate;
     }
 
@@ -46,7 +47,7 @@ public class Date {
     }
 
     protected boolean isValidDateFormat(String date) {
-        SimpleDateFormat myDateFormat = new SimpleDateFormat(Constants.DATE_FORMAT);
+        SimpleDateFormat myDateFormat = new SimpleDateFormat(DateConstants.DATE_FORMAT);
         myDateFormat.setLenient(false);
         Calendar cal = Calendar.getInstance();       
         try {

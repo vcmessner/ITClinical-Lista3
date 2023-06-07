@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="BDD.Cucumber.RunCucumberTest" time="2.283" tests="11" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="BDD.Cucumber.RunCucumberTest" time="2.148" tests="11" errors="0" skipped="0" failures="0">
   <properties>
     <property name="sun.desktop" value="windows"/>
     <property name="awt.toolkit" value="sun.awt.windows.WToolkit"/>
@@ -18,7 +18,7 @@
     <property name="user.country" value="BR"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="sun.boot.library.path" value="C:\Program Files (x86)\OpenLogic\jdk-8.0.372.07-hotspot\jre\bin"/>
-    <property name="sun.java.command" value="C:\Users\Harukatsu\AppData\Local\Temp\surefire2219415097043593729\surefirebooter-20230605062707924_3.jar C:\Users\Harukatsu\AppData\Local\Temp\surefire2219415097043593729 2023-06-05T06-27-07_519-jvmRun1 surefire-20230605062707924_1tmp surefire_0-20230605062707924_2tmp"/>
+    <property name="sun.java.command" value="C:\Users\Harukatsu\AppData\Local\Temp\surefire1155748485597089182\surefirebooter-20230605063404851_3.jar C:\Users\Harukatsu\AppData\Local\Temp\surefire1155748485597089182 2023-06-05T06-34-04_447-jvmRun1 surefire-20230605063404851_1tmp surefire_0-20230605063404851_2tmp"/>
     <property name="surefire.test.class.path" value="C:\Users\Harukatsu\Workspace\Learning\Work\Struts\UnderTheSkin\struts\target\test-classes;C:\Users\Harukatsu\Workspace\Learning\Work\Struts\UnderTheSkin\struts\target\classes;C:\Users\Harukatsu\.m2\repository\io\cucumber\cucumber-java\7.12.0\cucumber-java-7.12.0.jar;C:\Users\Harukatsu\.m2\repository\io\cucumber\cucumber-core\7.12.0\cucumber-core-7.12.0.jar;C:\Users\Harukatsu\.m2\repository\io\cucumber\cucumber-gherkin\7.12.0\cucumber-gherkin-7.12.0.jar;C:\Users\Harukatsu\.m2\repository\io\cucumber\cucumber-gherkin-messages\7.12.0\cucumber-gherkin-messages-7.12.0.jar;C:\Users\Harukatsu\.m2\repository\io\cucumber\gherkin\26.2.0\gherkin-26.2.0.jar;C:\Users\Harukatsu\.m2\repository\io\cucumber\messages\22.0.0\messages-22.0.0.jar;C:\Users\Harukatsu\.m2\repository\io\cucumber\tag-expressions\5.0.1\tag-expressions-5.0.1.jar;C:\Users\Harukatsu\.m2\repository\io\cucumber\cucumber-expressions\16.1.2\cucumber-expressions-16.1.2.jar;C:\Users\Harukatsu\.m2\repository\io\cucumber\datatable\7.12.0\datatable-7.12.0.jar;C:\Users\Harukatsu\.m2\repository\io\cucumber\cucumber-plugin\7.12.0\cucumber-plugin-7.12.0.jar;C:\Users\Harukatsu\.m2\repository\io\cucumber\docstring\7.12.0\docstring-7.12.0.jar;C:\Users\Harukatsu\.m2\repository\io\cucumber\html-formatter\20.3.0\html-formatter-20.3.0.jar;C:\Users\Harukatsu\.m2\repository\io\cucumber\junit-xml-formatter\0.2.0\junit-xml-formatter-0.2.0.jar;C:\Users\Harukatsu\.m2\repository\io\cucumber\ci-environment\9.2.0\ci-environment-9.2.0.jar;C:\Users\Harukatsu\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\Harukatsu\.m2\repository\io\cucumber\cucumber-junit-platform-engine\7.12.0\cucumber-junit-platform-engine-7.12.0.jar;C:\Users\Harukatsu\.m2\repository\org\junit\platform\junit-platform-engine\1.9.3\junit-platform-engine-1.9.3.jar;C:\Users\Harukatsu\.m2\repository\org\opentest4j\opentest4j\1.2.0\opentest4j-1.2.0.jar;C:\Users\Harukatsu\.m2\repository\org\junit\platform\junit-platform-commons\1.9.3\junit-platform-commons-1.9.3.jar;C:\Users\Harukatsu\.m2\repository\org\junit\platform\junit-platform-suite\1.9.3\junit-platform-suite-1.9.3.jar;C:\Users\Harukatsu\.m2\repository\org\junit\platform\junit-platform-suite-api\1.9.3\junit-platform-suite-api-1.9.3.jar;C:\Users\Harukatsu\.m2\repository\org\junit\platform\junit-platform-suite-engine\1.9.3\junit-platform-suite-engine-1.9.3.jar;C:\Users\Harukatsu\.m2\repository\org\junit\platform\junit-platform-suite-commons\1.9.3\junit-platform-suite-commons-1.9.3.jar;C:\Users\Harukatsu\.m2\repository\org\junit\platform\junit-platform-launcher\1.9.3\junit-platform-launcher-1.9.3.jar;C:\Users\Harukatsu\.m2\repository\org\junit\jupiter\junit-jupiter\5.9.3\junit-jupiter-5.9.3.jar;C:\Users\Harukatsu\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.9.3\junit-jupiter-api-5.9.3.jar;C:\Users\Harukatsu\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.9.3\junit-jupiter-params-5.9.3.jar;C:\Users\Harukatsu\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.9.3\junit-jupiter-engine-5.9.3.jar;C:\Users\Harukatsu\.m2\repository\org\apache\struts\struts2-core\2.5.30\struts2-core-2.5.30.jar;C:\Users\Harukatsu\.m2\repository\org\freemarker\freemarker\2.3.31\freemarker-2.3.31.jar;C:\Users\Harukatsu\.m2\repository\ognl\ognl\3.1.29\ognl-3.1.29.jar;C:\Users\Harukatsu\.m2\repository\org\javassist\javassist\3.20.0-GA\javassist-3.20.0-GA.jar;C:\Users\Harukatsu\.m2\repository\org\apache\logging\log4j\log4j-api\2.12.4\log4j-api-2.12.4.jar;C:\Users\Harukatsu\.m2\repository\commons-fileupload\commons-fileupload\1.4\commons-fileupload-1.4.jar;C:\Users\Harukatsu\.m2\repository\commons-io\commons-io\2.6\commons-io-2.6.jar;C:\Users\Harukatsu\.m2\repository\org\apache\commons\commons-lang3\3.8.1\commons-lang3-3.8.1.jar;C:\Users\Harukatsu\.m2\repository\org\apache\struts\struts2-junit-plugin\2.5.30\struts2-junit-plugin-2.5.30.jar;C:\Users\Harukatsu\.m2\repository\org\springframework\spring-test\4.3.26.RELEASE\spring-test-4.3.26.RELEASE.jar;C:\Users\Harukatsu\.m2\repository\org\springframework\spring-core\4.3.26.RELEASE\spring-core-4.3.26.RELEASE.jar;C:\Users\Harukatsu\.m2\repository\commons-logging\commons-logging\1.2\commons-logging-1.2.jar;C:\Users\Harukatsu\.m2\repository\junit\junit\4.12\junit-4.12.jar;C:\Users\Harukatsu\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;C:\Users\Harukatsu\.m2\repository\javax\servlet\javax.servlet-api\4.0.1\javax.servlet-api-4.0.1.jar;C:\Users\Harukatsu\.m2\repository\javax\servlet\jsp\jsp-api\2.1\jsp-api-2.1.jar;C:\Users\Harukatsu\.m2\repository\org\apache\struts\xwork\xwork-core\2.3.30\xwork-core-2.3.30.jar;C:\Users\Harukatsu\.m2\repository\asm\asm\3.3\asm-3.3.jar;C:\Users\Harukatsu\.m2\repository\asm\asm-commons\3.3\asm-commons-3.3.jar;C:\Users\Harukatsu\.m2\repository\asm\asm-tree\3.3\asm-tree-3.3.jar;C:\Users\Harukatsu\.m2\repository\org\springframework\spring-web\4.3.30.RELEASE\spring-web-4.3.30.RELEASE.jar;C:\Users\Harukatsu\.m2\repository\org\springframework\spring-aop\4.3.30.RELEASE\spring-aop-4.3.30.RELEASE.jar;C:\Users\Harukatsu\.m2\repository\org\springframework\spring-beans\4.3.30.RELEASE\spring-beans-4.3.30.RELEASE.jar;C:\Users\Harukatsu\.m2\repository\org\springframework\spring-context\4.3.30.RELEASE\spring-context-4.3.30.RELEASE.jar;C:\Users\Harukatsu\.m2\repository\org\springframework\spring-expression\4.3.30.RELEASE\spring-expression-4.3.30.RELEASE.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
     <property name="user.home" value="C:\Users\Harukatsu"/>
@@ -31,7 +31,7 @@
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"/>
-    <property name="surefire.real.class.path" value="C:\Users\Harukatsu\AppData\Local\Temp\surefire2219415097043593729\surefirebooter-20230605062707924_3.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\Harukatsu\AppData\Local\Temp\surefire1155748485597089182\surefirebooter-20230605063404851_3.jar"/>
     <property name="sun.boot.class.path" value="C:\Program Files (x86)\OpenLogic\jdk-8.0.372.07-hotspot\jre\lib\resources.jar;C:\Program Files (x86)\OpenLogic\jdk-8.0.372.07-hotspot\jre\lib\rt.jar;C:\Program Files (x86)\OpenLogic\jdk-8.0.372.07-hotspot\jre\lib\sunrsasign.jar;C:\Program Files (x86)\OpenLogic\jdk-8.0.372.07-hotspot\jre\lib\jsse.jar;C:\Program Files (x86)\OpenLogic\jdk-8.0.372.07-hotspot\jre\lib\jce.jar;C:\Program Files (x86)\OpenLogic\jdk-8.0.372.07-hotspot\jre\lib\charsets.jar;C:\Program Files (x86)\OpenLogic\jdk-8.0.372.07-hotspot\jre\lib\jfr.jar;C:\Program Files (x86)\OpenLogic\jdk-8.0.372.07-hotspot\jre\classes"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot Tiered Compilers"/>
@@ -61,7 +61,7 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="52.0"/>
   </properties>
-  <testcase name="Example #1.1" classname="Examples" time="0.962">
+  <testcase name="Example #1.1" classname="Examples" time="0.939">
     <system-out><![CDATA[
 Scenario Outline: Users with invalid names cannot be allowed into de success page &amp#27;[90m# BDD/Cucumber/RegisterActionAcess.feature:21&amp#27;[0m
   &amp#27;[32mGiven &amp#27;[0m&amp#27;[32mi want to acess the success page&amp#27;[0m                                          &amp#27;[90m# BDD.Cucumber.StepDefs.RegisterActionStepDefs.i_want_to_acess_the_success_page()&amp#27;[0m
@@ -75,7 +75,7 @@ Scenario Outline: Users with invalid names cannot be allowed into de success pag
     <system-err><![CDATA[ERROR StatusLogger Log4j2 could not find a logging implementation. Please add log4j-core to the classpath. Using SimpleLogger to log to the console...
 ]]></system-err>
   </testcase>
-  <testcase name="Example #1.1" classname="Examples" time="0.127">
+  <testcase name="Example #1.1" classname="Examples" time="0.121">
     <system-out><![CDATA[
 Scenario Outline: Users with invalid Birthdates cannot be allowed into de success page &amp#27;[90m# BDD/Cucumber/RegisterActionAcess.feature:34&amp#27;[0m
   &amp#27;[32mGiven &amp#27;[0m&amp#27;[32mi want to acess the success page&amp#27;[0m                                               &amp#27;[90m# BDD.Cucumber.StepDefs.RegisterActionStepDefs.i_want_to_acess_the_success_page()&amp#27;[0m
@@ -87,7 +87,7 @@ Scenario Outline: Users with invalid Birthdates cannot be allowed into de succes
   &amp#27;[32mThen &amp#27;[0m&amp#27;[32mi must be greeted with an error message&amp#27;[0m                                         &amp#27;[90m# BDD.Cucumber.StepDefs.RegisterActionStepDefs.i_must_be_greeted_with_an_error_message()&amp#27;[0m
 ]]></system-out>
   </testcase>
-  <testcase name="Example #1.1" classname="Examples" time="0.128">
+  <testcase name="Example #1.1" classname="Examples" time="0.121">
     <system-out><![CDATA[
 Scenario Outline: Underaged users cannot be allowed into the success page &amp#27;[90m# BDD/Cucumber/RegisterActionAcess.feature:51&amp#27;[0m
   &amp#27;[32mGiven &amp#27;[0m&amp#27;[32mi want to acess the success page&amp#27;[0m                                  &amp#27;[90m# BDD.Cucumber.StepDefs.RegisterActionStepDefs.i_want_to_acess_the_success_page()&amp#27;[0m
@@ -99,7 +99,7 @@ Scenario Outline: Underaged users cannot be allowed into the success page &amp#2
   &amp#27;[32mThen &amp#27;[0m&amp#27;[32mi must be greeted with an error message&amp#27;[0m                            &amp#27;[90m# BDD.Cucumber.StepDefs.RegisterActionStepDefs.i_must_be_greeted_with_an_error_message()&amp#27;[0m
 ]]></system-out>
   </testcase>
-  <testcase name="Example #1.1" classname="Examples" time="0.071">
+  <testcase name="Example #1.1" classname="Examples" time="0.068">
     <system-out><![CDATA[
 Scenario Outline: Legal Age users are allowed into the success page &amp#27;[90m# BDD/Cucumber/RegisterActionAcess.feature:69&amp#27;[0m
   &amp#27;[32mGiven &amp#27;[0m&amp#27;[32mi want to acess the success page&amp#27;[0m                            &amp#27;[90m# BDD.Cucumber.StepDefs.RegisterActionStepDefs.i_want_to_acess_the_success_page()&amp#27;[0m
@@ -111,7 +111,7 @@ Scenario Outline: Legal Age users are allowed into the success page &amp#27;[90m
   &amp#27;[32mThen &amp#27;[0m&amp#27;[32mi must be see a page containing my &amp#27;[0m&amp#27;[32m&amp#27;[1m"Algo"&amp#27;[0m&amp#27;[32m and &amp#27;[0m&amp#27;[32m&amp#27;[1m"18 Years"&amp#27;[0m     &amp#27;[90m# BDD.Cucumber.StepDefs.RegisterActionStepDefs.i_must_be_see_a_page_containing_my_name_and_age(java.lang.String,java.lang.String)&amp#27;[0m
 ]]></system-out>
   </testcase>
-  <testcase name="Example #1.2" classname="Examples" time="0.121">
+  <testcase name="Example #1.2" classname="Examples" time="0.12">
     <system-out><![CDATA[
 Scenario Outline: Users with invalid Birthdates cannot be allowed into de success page &amp#27;[90m# BDD/Cucumber/RegisterActionAcess.feature:35&amp#27;[0m
   &amp#27;[32mGiven &amp#27;[0m&amp#27;[32mi want to acess the success page&amp#27;[0m                                               &amp#27;[90m# BDD.Cucumber.StepDefs.RegisterActionStepDefs.i_want_to_acess_the_success_page()&amp#27;[0m
@@ -123,7 +123,7 @@ Scenario Outline: Users with invalid Birthdates cannot be allowed into de succes
   &amp#27;[32mThen &amp#27;[0m&amp#27;[32mi must be greeted with an error message&amp#27;[0m                                         &amp#27;[90m# BDD.Cucumber.StepDefs.RegisterActionStepDefs.i_must_be_greeted_with_an_error_message()&amp#27;[0m
 ]]></system-out>
   </testcase>
-  <testcase name="Example #1.2" classname="Examples" time="0.116">
+  <testcase name="Example #1.2" classname="Examples" time="0.109">
     <system-out><![CDATA[
 Scenario Outline: Underaged users cannot be allowed into the success page &amp#27;[90m# BDD/Cucumber/RegisterActionAcess.feature:52&amp#27;[0m
   &amp#27;[32mGiven &amp#27;[0m&amp#27;[32mi want to acess the success page&amp#27;[0m                                  &amp#27;[90m# BDD.Cucumber.StepDefs.RegisterActionStepDefs.i_want_to_acess_the_success_page()&amp#27;[0m
@@ -135,7 +135,7 @@ Scenario Outline: Underaged users cannot be allowed into the success page &amp#2
   &amp#27;[32mThen &amp#27;[0m&amp#27;[32mi must be greeted with an error message&amp#27;[0m                            &amp#27;[90m# BDD.Cucumber.StepDefs.RegisterActionStepDefs.i_must_be_greeted_with_an_error_message()&amp#27;[0m
 ]]></system-out>
   </testcase>
-  <testcase name="Example #1.2" classname="Examples" time="0.068">
+  <testcase name="Example #1.2" classname="Examples" time="0.062">
     <system-out><![CDATA[
 Scenario Outline: Legal Age users are allowed into the success page &amp#27;[90m# BDD/Cucumber/RegisterActionAcess.feature:70&amp#27;[0m
   &amp#27;[32mGiven &amp#27;[0m&amp#27;[32mi want to acess the success page&amp#27;[0m                            &amp#27;[90m# BDD.Cucumber.StepDefs.RegisterActionStepDefs.i_want_to_acess_the_success_page()&amp#27;[0m
@@ -147,7 +147,7 @@ Scenario Outline: Legal Age users are allowed into the success page &amp#27;[90m
   &amp#27;[32mThen &amp#27;[0m&amp#27;[32mi must be see a page containing my &amp#27;[0m&amp#27;[32m&amp#27;[1m"Algo"&amp#27;[0m&amp#27;[32m and &amp#27;[0m&amp#27;[32m&amp#27;[1m"103 Years"&amp#27;[0m    &amp#27;[90m# BDD.Cucumber.StepDefs.RegisterActionStepDefs.i_must_be_see_a_page_containing_my_name_and_age(java.lang.String,java.lang.String)&amp#27;[0m
 ]]></system-out>
   </testcase>
-  <testcase name="Example #1.3" classname="Examples" time="0.122">
+  <testcase name="Example #1.3" classname="Examples" time="0.118">
     <system-out><![CDATA[
 Scenario Outline: Users with invalid Birthdates cannot be allowed into de success page &amp#27;[90m# BDD/Cucumber/RegisterActionAcess.feature:36&amp#27;[0m
   &amp#27;[32mGiven &amp#27;[0m&amp#27;[32mi want to acess the success page&amp#27;[0m                                               &amp#27;[90m# BDD.Cucumber.StepDefs.RegisterActionStepDefs.i_want_to_acess_the_success_page()&amp#27;[0m
@@ -159,7 +159,7 @@ Scenario Outline: Users with invalid Birthdates cannot be allowed into de succes
   &amp#27;[32mThen &amp#27;[0m&amp#27;[32mi must be greeted with an error message&amp#27;[0m                                         &amp#27;[90m# BDD.Cucumber.StepDefs.RegisterActionStepDefs.i_must_be_greeted_with_an_error_message()&amp#27;[0m
 ]]></system-out>
   </testcase>
-  <testcase name="Example #1.3" classname="Examples" time="0.091">
+  <testcase name="Example #1.3" classname="Examples" time="0.087">
     <system-out><![CDATA[
 Scenario Outline: Underaged users cannot be allowed into the success page &amp#27;[90m# BDD/Cucumber/RegisterActionAcess.feature:53&amp#27;[0m
   &amp#27;[32mGiven &amp#27;[0m&amp#27;[32mi want to acess the success page&amp#27;[0m                                  &amp#27;[90m# BDD.Cucumber.StepDefs.RegisterActionStepDefs.i_want_to_acess_the_success_page()&amp#27;[0m
@@ -171,7 +171,7 @@ Scenario Outline: Underaged users cannot be allowed into the success page &amp#2
   &amp#27;[32mThen &amp#27;[0m&amp#27;[32mi must be greeted with an error message&amp#27;[0m                            &amp#27;[90m# BDD.Cucumber.StepDefs.RegisterActionStepDefs.i_must_be_greeted_with_an_error_message()&amp#27;[0m
 ]]></system-out>
   </testcase>
-  <testcase name="Example #1.3" classname="Examples" time="0.067">
+  <testcase name="Example #1.3" classname="Examples" time="0.064">
     <system-out><![CDATA[
 Scenario Outline: Legal Age users are allowed into the success page &amp#27;[90m# BDD/Cucumber/RegisterActionAcess.feature:71&amp#27;[0m
   &amp#27;[32mGiven &amp#27;[0m&amp#27;[32mi want to acess the success page&amp#27;[0m                            &amp#27;[90m# BDD.Cucumber.StepDefs.RegisterActionStepDefs.i_want_to_acess_the_success_page()&amp#27;[0m
@@ -183,7 +183,7 @@ Scenario Outline: Legal Age users are allowed into the success page &amp#27;[90m
   &amp#27;[32mThen &amp#27;[0m&amp#27;[32mi must be see a page containing my &amp#27;[0m&amp#27;[32m&amp#27;[1m"Algo"&amp#27;[0m&amp#27;[32m and &amp#27;[0m&amp#27;[32m&amp#27;[1m"104 Years"&amp#27;[0m    &amp#27;[90m# BDD.Cucumber.StepDefs.RegisterActionStepDefs.i_must_be_see_a_page_containing_my_name_and_age(java.lang.String,java.lang.String)&amp#27;[0m
 ]]></system-out>
   </testcase>
-  <testcase name="Example #1.4" classname="Examples" time="0.115">
+  <testcase name="Example #1.4" classname="Examples" time="0.112">
     <system-out><![CDATA[
 Scenario Outline: Users with invalid Birthdates cannot be allowed into de success page &amp#27;[90m# BDD/Cucumber/RegisterActionAcess.feature:37&amp#27;[0m
   &amp#27;[32mGiven &amp#27;[0m&amp#27;[32mi want to acess the success page&amp#27;[0m                                               &amp#27;[90m# BDD.Cucumber.StepDefs.RegisterActionStepDefs.i_want_to_acess_the_success_page()&amp#27;[0m

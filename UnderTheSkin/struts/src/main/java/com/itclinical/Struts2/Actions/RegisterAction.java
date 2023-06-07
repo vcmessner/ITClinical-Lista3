@@ -1,7 +1,7 @@
-package com.itclinical.Struts2.Actions;
+package com.itclinical.struts2.actions;
 
-import com.itclinical.Struts2.Helpers.Constants;
-import com.itclinical.Struts2.User.User;
+import com.itclinical.struts2.helpers.Constants;
+import com.itclinical.struts2.user.User;
 import com.opensymphony.xwork2.ActionSupport;
 @SuppressWarnings("serial")
 public class RegisterAction extends ActionSupport {    
@@ -50,11 +50,11 @@ public class RegisterAction extends ActionSupport {
             errorCode=2;
             return false;
         }
-        if(user.age.isLegal(Constants.LEGAL_AGE)){
+        if(user.isLegal(Constants.LEGAL_AGE)){
             return true;
         }
         else{
-            addActionError(getText("AGE_RESTICTION_MESSAGE_STRING"));
+            addActionError(getText("AGE_RESTRICTION_MESSAGE_STRING"));
             errorCode = 3;
             return false;
         }
