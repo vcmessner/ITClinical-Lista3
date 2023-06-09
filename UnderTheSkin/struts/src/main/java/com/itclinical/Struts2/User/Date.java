@@ -11,14 +11,6 @@ public class Date {
 
     private String date=null;
 
-    public String getDate() {
-        return date;
-    }
-
-    public void setDate(String date) {
-        this.date = date;
-    }
-
     public Date(String myDate) {
         if(!isDatePropertyInvalid(myDate)){ 
             SimpleDateFormat myDateFormat = new SimpleDateFormat(DateConstants.DATE_FORMAT);
@@ -40,6 +32,14 @@ public class Date {
     public LocalDate GetLocalDate() throws ParseException {
         LocalDate userDate = LocalDate.parse(date, DateConstants.DEFAULT_FORMATTER);
         return userDate;
+    }
+
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
     }
 
     protected boolean isDatePropertyInvalid(String date) {

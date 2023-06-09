@@ -1,11 +1,6 @@
-com\itclinical\struts2\helpers\StringVerifyHelper.class
-com\itclinical\struts2\helpers\StringDateGenHelper.class
-com\itclinical\struts2\user\Date.class
-com\itclinical\struts2\actions\RegisterAction.class
 com\itclinical\struts2\user\User.class
-com\itclinical\struts2\helpers\ProbabilityConstants.class
-com\itclinical\struts2\helpers\RegexConstants.class
-com\itclinical\struts2\helpers\StringGenHelper.class
 com\itclinical\struts2\helpers\Constants.class
 com\itclinical\struts2\helpers\DateConstants.class
+com\itclinical\struts2\user\Date.class
 com\itclinical\struts2\user\Name.class
+com\itclinical\struts2\actions\RegisterAction.class

@@ -25,7 +25,7 @@ public class User {
         return name.getName();
     }
 
-    public int getAge() {
+    public Integer getAge() {
         return age;
     }
 
@@ -46,7 +46,7 @@ public class User {
     }
 
     public boolean isValid(){
-        if(this.getDate()==null || this.getName() ==null || this.getAge()==-1 || this.getAge()<Constants.LEGAL_AGE){
+        if(this.getDate()==null || this.getName() ==null || this.getAge()==-1 || !this.isLegal(Constants.LEGAL_AGE)){
             return false;
         }
         return true;
@@ -54,6 +54,9 @@ public class User {
     }
 
     public boolean isLegal(int legalAge){
+        if(age==null){
+            return false;
+        }
         return !(age<legalAge);
     }
 

@@ -1,11 +1,9 @@
 C:\Users\Harukatsu\Workspace\Learning\Work\Struts\UnderTheSkin\struts\src\test\java\com\itclinical\struts2\user\NameUnit.java
-C:\Users\Harukatsu\Workspace\Learning\Work\Struts\UnderTheSkin\struts\src\test\java\com\itclinical\struts2\helpers\StringDateGenHelperUnit.java
 C:\Users\Harukatsu\Workspace\Learning\Work\Struts\UnderTheSkin\struts\src\test\java\cucumber\RunCucumberTest.java
+C:\Users\Harukatsu\Workspace\Learning\Work\Struts\UnderTheSkin\struts\src\test\java\com\itclinical\struts2\helpers\UserHelper.java
 C:\Users\Harukatsu\Workspace\Learning\Work\Struts\UnderTheSkin\struts\src\test\java\com\itclinical\struts2\user\UserUnit.java
 C:\Users\Harukatsu\Workspace\Learning\Work\Struts\UnderTheSkin\struts\src\test\java\helpers\MockMultipartRequest.java
 C:\Users\Harukatsu\Workspace\Learning\Work\Struts\UnderTheSkin\struts\src\test\java\com\itclinical\struts2\actions\RegisterActionUnit.java
 C:\Users\Harukatsu\Workspace\Learning\Work\Struts\UnderTheSkin\struts\src\test\java\com\itclinical\struts2\user\DateUnit.java
 C:\Users\Harukatsu\Workspace\Learning\Work\Struts\UnderTheSkin\struts\src\test\java\helpers\UnderTheSkinHelpers.java
-C:\Users\Harukatsu\Workspace\Learning\Work\Struts\UnderTheSkin\struts\src\test\java\com\itclinical\struts2\user\AgeUnit.java
-C:\Users\Harukatsu\Workspace\Learning\Work\Struts\UnderTheSkin\struts\src\test\java\cucumber\RegisterActionStepDefs.java
-C:\Users\Harukatsu\Workspace\Learning\Work\Struts\UnderTheSkin\struts\src\test\java\com\itclinical\struts2\helpers\StringGenHelperUnit.java
+C:\Users\Harukatsu\Workspace\Learning\Work\Struts\UnderTheSkin\struts\src\test\java\cucumber\stepdefs\RegisterActionStepDefs.java

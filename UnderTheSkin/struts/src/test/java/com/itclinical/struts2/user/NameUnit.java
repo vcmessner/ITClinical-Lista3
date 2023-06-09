@@ -1,27 +1,37 @@
 package com.itclinical.struts2.user;
 
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 
-import org.junit.jupiter.api.RepeatedTest;
-
-import com.itclinical.struts2.helpers.Constants;
-import com.itclinical.struts2.helpers.ProbabilityConstants;
-import com.itclinical.struts2.helpers.StringGenHelper;
+import org.junit.Test;
+import com.itclinical.struts2.helpers.UserHelper;
 
 public class NameUnit {
     
-    @RepeatedTest(Constants.DEFAULT_NUMBER_JUNIT_REPEAT)
+    @Test
     public void nameContructorTest() {
-        Name nullName =  new Name(null);
-        Name emptyName = new Name("");
+        Name nullName =  new Name(UserHelper.createNullName().getName());
+        Name emptyName = new Name(UserHelper.createEmptyName().getName());
         Name blankName = new Name(" ");
-        Name validName = new Name(StringGenHelper.createRandomAlphanumericString(ProbabilityConstants.DEFAULT_UPPERCASE_PROBABILITY, ProbabilityConstants.DEFAULT_RANDOM_STR_LEN));
-        assertTrue(nullName.getName()==null);
-        assertTrue(emptyName.getName()==null);
-        assertTrue(blankName.getName()!=null);
-        assertTrue(validName.getName()!=null);
-        
+        Name validName = new Name(UserHelper.createValidName().getName());
+        assertNull(nullName.getName());
+        assertNull(emptyName.getName());
+        assertNotNull(blankName.getName());
+        assertNotNull(validName.getName());      
     }
+
+    @Test
+    public void isNamePropertyInvalidTest() {
+        Name name =  new Name(UserHelper.createNullName().getName());
+        assertTrue(name.isNamePropertyInvalid(UserHelper.createNullName().getName()));
+        assertTrue(name.isNamePropertyInvalid(UserHelper.createEmptyName().getName()));
+        assertFalse(name.isNamePropertyInvalid(" "));
+        assertFalse(name.isNamePropertyInvalid(UserHelper.createValidName().getName()));
+    }
+
+
 
     
 }

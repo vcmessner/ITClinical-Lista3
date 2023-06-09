@@ -1,4 +1,4 @@
-package cucumber;
+package cucumber.stepdefs;
 
 import static org.junit.Assert.assertEquals;
 
@@ -28,7 +28,7 @@ public class RegisterActionStepDefs {
     private Period dateDiff;
   
 
-    @Given("i want to access the success page")
+    @Given("I want to access the success page")
     public void i_want_to_acess_the_success_page() {
         helper.initServletRequestMockObject();
         try{
@@ -39,7 +39,7 @@ public class RegisterActionStepDefs {
         }
     }
 
-    @Given("today is {string}")
+    @Given("Today is {string}")
     public void today_is(String today) throws ParseException {
         Date myDate = new Date(today);
         LocalDate todayLocalDate = myDate.GetLocalDate();
@@ -48,12 +48,12 @@ public class RegisterActionStepDefs {
     }
 
 
-    @When("i input my name {string}")
+    @When("I input my name {string}")
     public void i_input_my(String name) {
         inputParameterMap.put("name", name);
     }
 
-    @When("i input my Birthdate {string}")
+    @When("I input my Birthdate {string}")
     public void i_input_my_birthdate(String birthDate) throws ParseException {
         Date myDate = new Date(birthDate);
         String formattedDate = "";
@@ -65,50 +65,51 @@ public class RegisterActionStepDefs {
         inputParameterMap.put("date", formattedDate);
     }
 
-    @When("i click the submit button")
+    @When("I click the submit button")
     public void i_click_the_submit_button() throws Exception {
         helper.getRequest().addParameters(inputParameterMap);
         ActionSupport myAction = helper.createAction(Constants.REGISTER_ACTION_URI, true);
         executeAndSaveOutputs((RegisterAction)myAction);
     }
 
-    @Then("my access request will be {string}")
+    @Then("My access request will be {string}")
     public void my_acess_request_will_be(String answer) {
         assertEquals(answer, assertParameterMap.get("allowed"));      
 }
 
-@Then("I will be shown the error message: {string}")
-public void i_must_be_greeted_with_an_error_message(String error) {
-    assertEquals(assertParameterMap.get("error"), error);
-}
-
-@Then("i must be see a page containing my {string} and {string}")
-public void i_must_be_see_a_page_containing_my_name_and_age(String name, String age) {
-    assertEquals(name, assertParameterMap.get("name"));
-    assertEquals(age, assertParameterMap.get("age"));
-    assertEquals(age, assertParameterMap.get("age"));
-    assertEquals(assertParameterMap.get("error"), null);
-}
-
-private String mapActionStatus(String code){
-    switch(code){
-        case("input"):
-            return "Denied";
-        case("success"):
-            return "Approved";
-        default:
-            return"";
+    @Then("I will be shown the error message: {string}")
+    public void i_must_be_greeted_with_an_error_message(String error) {
+        assertEquals(assertParameterMap.get("error"), error);
     }
-}
 
-private void executeAndSaveOutputs(RegisterAction myAction) throws Exception{
-    String status = mapActionStatus(helper.executeProxy());
-    assertParameterMap.put("allowed",status);
-    assertParameterMap.put("error",(myAction).getError());
-    assertParameterMap.put("name",(myAction).getName());
-    if(status.equals("Approved")){
-        assertParameterMap.put("age",(myAction).getAgeMessage());
+    @Then("The user has name {string} and age {string}")
+    public void i_must_be_see_a_page_containing_my_name_and_age(String name, String age) {
+        assertEquals(name, assertParameterMap.get("name"));
+        assertEquals(age, assertParameterMap.get("age"));
+        assertEquals(age, assertParameterMap.get("age"));
+        assertEquals(assertParameterMap.get("error"), null);
     }
-}
+
+    private String mapActionStatus(String code){
+        switch(code){
+            case("input"):
+                return "Denied";
+            case("success"):
+                return "Approved";
+            default:
+                return"";
+        }
+    }
+
+    private void executeAndSaveOutputs(RegisterAction myAction) throws Exception{
+        String status = mapActionStatus(helper.executeProxy());
+        assertParameterMap.put("allowed",status);
+        assertParameterMap.put("error",(myAction).getError());
+        assertParameterMap.put("name",(myAction).getName());
+        if(status.equals("Approved")){
+            assertParameterMap.put("age",(myAction).getAgeMessage());
+        }
+    }
 
 }
+

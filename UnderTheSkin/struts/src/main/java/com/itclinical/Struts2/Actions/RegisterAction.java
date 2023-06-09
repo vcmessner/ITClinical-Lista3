@@ -11,22 +11,23 @@ public class RegisterAction extends ActionSupport {
     private User user;
     private String error=null;
 
+    
+    public String validateUser() throws Exception{
+        this.user = new User(name, date);
+        if(checkUsername(user.getName()) && checkDate(user.getDate()) && checkLegalAge(user)){
+            error=null;
+            return ActionSupport.SUCCESS;
+        }
+        return ActionSupport.INPUT;        
+    }
+    
     public String getError() {
         return error;
     }
 
     public void setError(String error) {
         this.error = error;
-    }
-
-    public String validateUser() throws Exception{
-        this.user = new User(name, date);
-        if(checkUsername() && checkDate()){
-            error=null;
-            return ActionSupport.SUCCESS;
-        }
-        return ActionSupport.INPUT;        
-    }
+    }    
 
     public String getName() {
         return name;
@@ -46,29 +47,30 @@ public class RegisterAction extends ActionSupport {
 
     public String getAgeMessage() {
         return user.getAge() + " Years";
-    } 
+    }    
 
-    
-
-    protected boolean checkDate() throws Exception {
-        if(user.getDate()==null) {
+    protected boolean checkDate(String myDate){
+        if(myDate==null) {
             error=getText("INVALID_DATE_MESSAGE_STRING");
-            addActionError(error);            
+            addActionError(getText("INVALID_DATE_MESSAGE_STRING"));            
             return false;
         }
+        return true;
+    }
+
+    protected boolean checkLegalAge(User user){
         if(user.isLegal(Constants.LEGAL_AGE)){
             return true;
         }
         else{
             error = getText("AGE_RESTRICTION_MESSAGE_STRING");
-            addActionError(error);
-            
+            addActionError(error);          
             return false;
         }
     }
 
-    protected boolean checkUsername() throws Exception {
-        if(user.getName()==null) {
+    protected boolean checkUsername(String name) throws Exception {
+        if(name==null) {
             error=getText("INVALID_NAME_MESSAGE_STRING");
             addActionError(error);            
             return false;        
