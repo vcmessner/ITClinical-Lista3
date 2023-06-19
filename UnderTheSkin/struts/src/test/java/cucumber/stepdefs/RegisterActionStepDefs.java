@@ -8,7 +8,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import com.itclinical.struts2.actions.RegisterAction;
-import com.itclinical.struts2.helpers.Constants;
+import com.itclinical.struts2.helpers.TestConstants;
 import com.itclinical.struts2.helpers.DateConstants;
 import com.itclinical.struts2.user.Date;
 import com.opensymphony.xwork2.ActionSupport;
@@ -41,11 +41,12 @@ public class RegisterActionStepDefs {
 
     @Given("Today is {string}")
     public void today_is(String today) throws ParseException {
-        Date myDate = new Date(today);
-        LocalDate todayLocalDate = myDate.GetLocalDate();
+        LocalDate todayLocalDate = Date.GetLocalDate(today);
         LocalDate currentDate = LocalDate.now(DateConstants.DEFAULT_ZONE_OFFSET);
         dateDiff = Period.between(todayLocalDate,currentDate);
     }
+
+    
 
 
     @When("I input my name {string}")
@@ -55,10 +56,10 @@ public class RegisterActionStepDefs {
 
     @When("I input my Birthdate {string}")
     public void i_input_my_birthdate(String birthDate) throws ParseException {
-        Date myDate = new Date(birthDate);
+        birthDate = Date.validateDate(birthDate);
         String formattedDate = "";
-        if(myDate.getDate()!=null){
-            LocalDate todayLocalDate = myDate.GetLocalDate();
+        if(birthDate!=null){
+            LocalDate todayLocalDate = Date.GetLocalDate(birthDate);
             todayLocalDate =todayLocalDate.plus(dateDiff);
             formattedDate = todayLocalDate.format(DateConstants.DEFAULT_FORMATTER);
         }
@@ -68,7 +69,7 @@ public class RegisterActionStepDefs {
     @When("I click the submit button")
     public void i_click_the_submit_button() throws Exception {
         helper.getRequest().addParameters(inputParameterMap);
-        ActionSupport myAction = helper.createAction(Constants.REGISTER_ACTION_URI, true);
+        ActionSupport myAction = helper.createAction(TestConstants.REGISTER_ACTION_URI, true);
         executeAndSaveOutputs((RegisterAction)myAction);
     }
 

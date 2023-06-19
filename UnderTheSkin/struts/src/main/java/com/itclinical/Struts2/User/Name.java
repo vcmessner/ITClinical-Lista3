@@ -1,27 +1,17 @@
 package com.itclinical.struts2.user;
 
 public class Name {
-    private String name;
 
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public Name(String myName) {
-        if (isNamePropertyInvalid(myName)){       
-            this.name = null;
+    public static String validateName(String myName){
+        if(!Name.isNamePropertyInvalid(myName)){
+           return myName;            
         }
-        else{        
-            this.name = myName;
+        else{
+            return null;
         }
-        
     }
 
-    protected boolean isNamePropertyInvalid(String myName) {
+    public static boolean isNamePropertyInvalid(String myName) {
         return myName == null || myName.isEmpty();
     }
     

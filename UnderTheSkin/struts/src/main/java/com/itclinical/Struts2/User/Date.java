@@ -9,44 +9,25 @@ import com.itclinical.struts2.helpers.DateConstants;
 
 public class Date {
 
-    private String date=null;
-
-    public Date(String myDate) {
-        if(!isDatePropertyInvalid(myDate)){ 
-            SimpleDateFormat myDateFormat = new SimpleDateFormat(DateConstants.DATE_FORMAT);
-            myDateFormat.setLenient(false);
-            Calendar cal = Calendar.getInstance();
-            try {
-                cal.setTime(myDateFormat.parse(myDate));
-            } catch (java.text.ParseException e) {
-                e.printStackTrace();
-            }
-            this.date=myDateFormat.format(cal.getTime());
+    public static String validateDate(String date){
+        if(!Date.isDatePropertyInvalid(date)){
+           return date;            
         }
         else{
-            this.date = null;
+            return null;
         }
     }
 
 
-    public LocalDate GetLocalDate() throws ParseException {
-        LocalDate userDate = LocalDate.parse(date, DateConstants.DEFAULT_FORMATTER);
-        return userDate;
+    public static LocalDate GetLocalDate(String date) throws ParseException {
+        return LocalDate.parse(date, DateConstants.DEFAULT_FORMATTER);
     }
 
-    public String getDate() {
-        return date;
-    }
-
-    public void setDate(String date) {
-        this.date = date;
-    }
-
-    protected boolean isDatePropertyInvalid(String date) {
+    public static boolean isDatePropertyInvalid(String date) {
         return date == null || date.isEmpty() || (!isValidDateFormat(date));
     }
 
-    protected boolean isValidDateFormat(String date) {
+    protected static boolean isValidDateFormat(String date) {
         SimpleDateFormat myDateFormat = new SimpleDateFormat(DateConstants.DATE_FORMAT);
         myDateFormat.setLenient(false);
         Calendar cal = Calendar.getInstance();       

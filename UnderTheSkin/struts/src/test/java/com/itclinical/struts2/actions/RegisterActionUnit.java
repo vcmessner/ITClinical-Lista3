@@ -1,66 +1,73 @@
 package com.itclinical.struts2.actions;
 
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.assertEquals;
 
-import java.text.ParseException;
-import java.util.HashMap;
-import java.util.Map;
 
 import org.junit.Before;
 import org.junit.Test;
-
-import com.itclinical.struts2.helpers.Constants;
 import com.itclinical.struts2.helpers.UserHelper;
-import com.itclinical.struts2.user.Date;
-import com.itclinical.struts2.user.Name;
 import com.itclinical.struts2.user.User;
+import com.opensymphony.xwork2.ActionSupport;
 
-import helpers.UnderTheSkinHelpers;
+
+public class RegisterActionUnit extends RegisterAction {
 
 
-public class RegisterActionUnit {
-
-    private UnderTheSkinHelpers helper = new UnderTheSkinHelpers();
-    private Map<String, String> inputParameterMap = new HashMap<>();
-    RegisterAction myAction;
+    RegisterActionUnit myAction;
 
     @Before
-    public void setUpTest() throws Exception {
-        helper.initServletRequestMockObject();
-        try{
-            helper.setUp();
-            }
-        catch(Exception e){
-            e.printStackTrace();
-        }
-        inputParameterMap.put("name", "algo");
-        inputParameterMap.put("date", "31/12/1992");
-        helper.getRequest().addParameters(inputParameterMap);
-        myAction = (RegisterAction)helper.createAction(Constants.REGISTER_ACTION_URI, true);
-        helper.executeProxy();
+    public void setUpTest(){
+        myAction = new RegisterActionUnit();
     }
 
-
-
-    @Test
-    public void checkDateTest() throws Exception{        
-        assertTrue(myAction.checkDate(new Date("31/12/1992").getDate()));
-        assertFalse(myAction.checkDate(new Date("31/13/1992").getDate()));  
+    @Override
+    public String getText(String key){
+        return key;
     }
 
     @Test
-    public void checkNameTest(){
-        assertTrue(myAction.checkDate(new Name("Algo").getName()));
-        assertFalse(myAction.checkDate(new Name("").getName()));
-        assertFalse(myAction.checkDate(new Name(null).getName()));
+    public void getError_getInvalidDateError(){
+        User user =  UserHelper.createInvalidDateUser();
+        this.name = user.getName();
+        this.date = user.getDate();
+        this.user = user;
+        String response = this.validateUser();
+        assertEquals(response,ActionSupport.INPUT);
+        assertEquals(this.getError(),"INVALID_DATE_MESSAGE_STRING");       
     }
 
     @Test
-    public void checkLegalAgeTest() throws ParseException{
-        User validUser = UserHelper.createValidUser();
-        User minorUser = UserHelper.createMinorUser();
-        assertTrue(myAction.checkLegalAge(validUser));
-        assertFalse(myAction.checkLegalAge(minorUser));
+    public void getError_getInvalidNameError(){
+        User user =  UserHelper.createEmptyNameUser();
+        this.name = user.getName();
+        this.date = user.getDate();
+        this.user = user;
+        String response = this.validateUser();
+        assertEquals(response,ActionSupport.INPUT);
+        assertEquals(this.getError(),"INVALID_NAME_MESSAGE_STRING");
     }
+
+    
+    @Test
+    public void getError_getMinorAgeError(){
+        User user =  UserHelper.createMinorUser();
+        this.name = user.getName();
+        this.date = user.getDate();
+        this.user = user;
+        String response = this.validateUser();
+        assertEquals(response,ActionSupport.INPUT);
+        assertEquals(this.getError(),"AGE_RESTRICTION_MESSAGE_STRING");
+    }
+
+    @Test
+    public void getError_getValid(){
+        User user =  UserHelper.createValidUser();
+        this.name = user.getName();
+        this.date = user.getDate();
+        this.user = user;
+        String response = this.validateUser();
+        assertEquals(response,ActionSupport.SUCCESS);
+        assertEquals(this.getError(),"");
+    }
+
 }

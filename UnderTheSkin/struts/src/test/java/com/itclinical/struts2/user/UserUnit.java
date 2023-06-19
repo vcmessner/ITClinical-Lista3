@@ -9,6 +9,7 @@ import java.time.Period;
 
 import org.junit.Test;
 
+import com.itclinical.struts2.exceptions.RegisterException;
 import com.itclinical.struts2.helpers.Constants;
 import com.itclinical.struts2.helpers.DateConstants;
 import com.itclinical.struts2.helpers.UserHelper;
@@ -18,29 +19,44 @@ import freemarker.core.ParseException;
 public class UserUnit {
 
 
+
+
     @Test
-	public void userCreationTest() throws ParseException, java.text.ParseException {
-        User validUser = UserHelper.createValidUser();
+	public void isValidTest_minorUser() throws ParseException, java.text.ParseException {
         User minorUser = UserHelper.createMinorUser();
+        try{
+            System.out.println(minorUser.birthDate);
+            minorUser.isValid();
+            assertFalse(true);
+        }
+        catch (RegisterException e){
+            e.getCode().equals("AGE_RESTRICTION_MESSAGE_STRING");
+        }
+    }
+
+    @Test
+	public void isValidTest_invalidDateUser() throws ParseException, java.text.ParseException {
         User invalidDateUser = UserHelper.createInvalidDateUser();
-        User invalidNameUser = UserHelper.createEmptyNameUser();
-        assertTrue(validUser.isValid());
-        assertFalse(minorUser.isValid());
-        assertFalse(invalidDateUser.isValid());
-        assertFalse(invalidNameUser.isValid());       
+        try{
+            invalidDateUser.isValid();
+            assertFalse(true);
+        }
+        catch (RegisterException e){
+            e.getCode().equals("INVALID_DATE_MESSAGE_STRING");
+        }
 
     }
 
     @Test
-    public void isValidTest() throws java.text.ParseException{
-        User validUser = UserHelper.createValidUser();
-        User invalidNameUser = UserHelper.createNullNameUser();
-        User minorUser = UserHelper.createMinorUser();
-        User invalidDateUser = UserHelper.createInvalidDateUser();
-        assertTrue(validUser.isValid());
-        assertFalse(invalidNameUser.isValid());
-        assertFalse(minorUser.isValid());
-        assertFalse(invalidDateUser.isValid());
+	public void isValidTest_invalidNameUser() throws ParseException, java.text.ParseException {
+        User invalidNameUser = UserHelper.createEmptyNameUser();
+        try{
+            invalidNameUser.isValid();
+            assertFalse(true);
+        }
+        catch (RegisterException e){
+            e.getCode().equals("INVALID_NAME_MESSAGE_STRING");
+        }      
     }
 
     @Test

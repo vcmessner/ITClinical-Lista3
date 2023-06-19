@@ -1,34 +1,39 @@
 package com.itclinical.struts2.actions;
 
-import com.itclinical.struts2.helpers.Constants;
+import com.itclinical.struts2.exceptions.RegisterException;
 import com.itclinical.struts2.user.User;
 import com.opensymphony.xwork2.ActionSupport;
 @SuppressWarnings("serial")
 public class RegisterAction extends ActionSupport {    
     
-    private String name;
-    private String date;
-    private User user;
-    private String error=null;
-
+    protected String name;
+    protected  String date;
+    protected User user;
     
-    public String validateUser() throws Exception{
-        this.user = new User(name, date);
-        if(checkUsername(user.getName()) && checkDate(user.getDate()) && checkLegalAge(user)){
-            error=null;
-            return ActionSupport.SUCCESS;
+    public String validateUser(){
+        try{
+            this.user = new User(name, date);
+            if(user.isValid()){
+                this.getActionErrors().clear();
+                return ActionSupport.SUCCESS;
+            }
         }
-        return ActionSupport.INPUT;        
+        catch(RegisterException e){
+            this.addActionError(getText(e.getCode()));
+            return ActionSupport.INPUT;
+        }
+        return ActionSupport.INPUT;
     }
     
     public String getError() {
-        return error;
+        if(!this.getActionErrors().isEmpty()){;
+            return this.getActionErrors().iterator().next();
+        }
+        else{
+            return "";
+        }
     }
-
-    public void setError(String error) {
-        this.error = error;
-    }    
-
+    
     public String getName() {
         return name;
     }
@@ -47,34 +52,7 @@ public class RegisterAction extends ActionSupport {
 
     public String getAgeMessage() {
         return user.getAge() + " Years";
-    }    
+    }  
 
-    protected boolean checkDate(String myDate){
-        if(myDate==null) {
-            error=getText("INVALID_DATE_MESSAGE_STRING");
-            addActionError(getText("INVALID_DATE_MESSAGE_STRING"));            
-            return false;
-        }
-        return true;
-    }
-
-    protected boolean checkLegalAge(User user){
-        if(user.isLegal(Constants.LEGAL_AGE)){
-            return true;
-        }
-        else{
-            error = getText("AGE_RESTRICTION_MESSAGE_STRING");
-            addActionError(error);          
-            return false;
-        }
-    }
-
-    protected boolean checkUsername(String name) throws Exception {
-        if(name==null) {
-            error=getText("INVALID_NAME_MESSAGE_STRING");
-            addActionError(error);            
-            return false;        
-        }
-        return true;        
-        }
+    
 }
