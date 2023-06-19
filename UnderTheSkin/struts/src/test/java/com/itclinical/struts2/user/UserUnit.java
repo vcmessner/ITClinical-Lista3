@@ -22,10 +22,9 @@ public class UserUnit {
 
 
     @Test
-	public void isValidTest_minorUser() throws ParseException, java.text.ParseException {
+	public void isValidTest_validateMinorUser() throws ParseException, java.text.ParseException {
         User minorUser = UserHelper.createMinorUser();
         try{
-            System.out.println(minorUser.birthDate);
             minorUser.isValid();
             assertFalse(true);
         }
@@ -35,7 +34,7 @@ public class UserUnit {
     }
 
     @Test
-	public void isValidTest_invalidDateUser() throws ParseException, java.text.ParseException {
+	public void isValidTest_validateInvalidDateUser() throws ParseException, java.text.ParseException {
         User invalidDateUser = UserHelper.createInvalidDateUser();
         try{
             invalidDateUser.isValid();
@@ -48,7 +47,7 @@ public class UserUnit {
     }
 
     @Test
-	public void isValidTest_invalidNameUser() throws ParseException, java.text.ParseException {
+	public void isValidTest_validateInvalidNameUser() throws ParseException, java.text.ParseException {
         User invalidNameUser = UserHelper.createEmptyNameUser();
         try{
             invalidNameUser.isValid();

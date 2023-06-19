@@ -37,8 +37,6 @@ public class DateUnit {
     @ValueSource(strings = {""," ","  "}) // six numbers
     public void isDatePropertyInvalidTest_validateWhitespaceDate(String date) {
         assertTrue(Date.isDatePropertyInvalid(date));
-        assertTrue(Date.isDatePropertyInvalid(date));
-        assertTrue(Date.isDatePropertyInvalid(date));
     }
     @Test
     public void isDatePropertyInvalidTest_validateInvalidDateString() {
@@ -52,7 +50,4 @@ public class DateUnit {
     public void isDatePropertyInvalidTest_validateValidDateString() {
         assertFalse(Date.isDatePropertyInvalid(UserHelper.createValidDate()));
     }
-
-
-
 }

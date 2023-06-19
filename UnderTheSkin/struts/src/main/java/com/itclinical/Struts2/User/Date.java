@@ -18,7 +18,6 @@ public class Date {
         }
     }
 
-
     public static LocalDate GetLocalDate(String date) throws ParseException {
         return LocalDate.parse(date, DateConstants.DEFAULT_FORMATTER);
     }

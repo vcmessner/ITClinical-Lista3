@@ -79,16 +79,8 @@ public class RegisterActionStepDefs {
 }
 
     @Then("I will be shown the error message: {string}")
-    public void i_must_be_greeted_with_an_error_message(String error) {
+    public void i_will_be_shown_the_error_message(String error) {
         assertEquals(assertParameterMap.get("error"), error);
-    }
-
-    @Then("The user has name {string} and age {string}")
-    public void i_must_be_see_a_page_containing_my_name_and_age(String name, String age) {
-        assertEquals(name, assertParameterMap.get("name"));
-        assertEquals(age, assertParameterMap.get("age"));
-        assertEquals(age, assertParameterMap.get("age"));
-        assertEquals(assertParameterMap.get("error"), null);
     }
 
     private String mapActionStatus(String code){

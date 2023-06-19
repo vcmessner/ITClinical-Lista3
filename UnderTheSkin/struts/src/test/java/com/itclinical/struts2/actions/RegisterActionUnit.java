@@ -26,7 +26,7 @@ public class RegisterActionUnit extends RegisterAction {
     }
 
     @Test
-    public void getError_getInvalidDateError(){
+    public void getErrorTest_validateInvalidDateUserError(){
         User user =  UserHelper.createInvalidDateUser();
         this.name = user.getName();
         this.date = user.getDate();
@@ -37,7 +37,7 @@ public class RegisterActionUnit extends RegisterAction {
     }
 
     @Test
-    public void getError_getInvalidNameError(){
+    public void getErrorTest_validateInvalidNameUserError(){
         User user =  UserHelper.createEmptyNameUser();
         this.name = user.getName();
         this.date = user.getDate();
@@ -49,7 +49,7 @@ public class RegisterActionUnit extends RegisterAction {
 
     
     @Test
-    public void getError_getMinorAgeError(){
+    public void getErrorTest_validateMinorAgeUserError(){
         User user =  UserHelper.createMinorUser();
         this.name = user.getName();
         this.date = user.getDate();
@@ -60,7 +60,7 @@ public class RegisterActionUnit extends RegisterAction {
     }
 
     @Test
-    public void getError_getValid(){
+    public void getErrorTest_validateValidUser(){
         User user =  UserHelper.createValidUser();
         this.name = user.getName();
         this.date = user.getDate();

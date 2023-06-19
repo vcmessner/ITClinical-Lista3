@@ -52,7 +52,5 @@ public class RegisterAction extends ActionSupport {
 
     public String getAgeMessage() {
         return user.getAge() + " Years";
-    }  
-
-    
+    }     
 }
